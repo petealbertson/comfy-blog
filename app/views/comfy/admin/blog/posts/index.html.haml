@@ -22,7 +22,7 @@
               - link = post.url
               = link_to link, link, target: "_blank"
               %br
-              = post.published_at.try(:to_s, :db)
+              = post.published_at&.strftime('%Y-%m-%d %H:%M:%S')
 
           .item-categories.ml-auto.d-flex.align-items-center
             = render "comfy/admin/cms/categories/categories", object: post

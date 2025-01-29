@@ -21,7 +21,8 @@ Gem::Specification.new do |s|
 
   s.require_paths = ["lib"]
 
-  s.required_ruby_version = ">= 2.3.0"
+  s.required_ruby_version = ">= 3.1.0"
 
-  s.add_dependency "comfortable_mexican_sofa", ">= 2.0.14"
+  s.add_dependency "comfortable_media_surfer", "~> 3.0"
+  s.add_dependency "rails", "~> 7.2.0"
 end
