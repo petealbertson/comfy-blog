@@ -2,7 +2,7 @@
 
 require "rubygems"
 require "rails"
-require "comfortable_mexican_sofa"
+require "comfortable_media_surfer"
 require "comfy_blog"
 
 module ComfyBlog
@@ -21,7 +21,7 @@ module ComfyBlog
   class Engine < ::Rails::Engine
 
     initializer "comfy_blog.configuration" do
-      ComfortableMexicanSofa::ViewHooks.add(:navigation, "/comfy/admin/blog/partials/navigation")
+      ComfortableMediaSurfer::ViewHooks.add(:navigation, "/comfy/admin/blog/partials/navigation")
       config.to_prepare do
         Comfy::Cms::Site.send :include, ComfyBlog::CmsSiteExtensions
       end
