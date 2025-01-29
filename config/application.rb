@@ -13,7 +13,11 @@ module ComfyBlog
 
     require_relative "../lib/comfy_blog"
 
-    config.load_defaults 5.2
+    config.load_defaults 7.1
+
+    # Enable Sprockets for asset compilation
+    config.assets.enabled = true
+    config.assets.compile = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

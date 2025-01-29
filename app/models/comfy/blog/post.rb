@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Comfy::Blog::Post < ActiveRecord::Base
-
   self.table_name = "comfy_blog_posts"
 
   include Comfy::Cms::WithFragments
@@ -30,7 +29,7 @@ class Comfy::Blog::Post < ActiveRecord::Base
                     :set_published_at,
                     :set_date
 
-  # -- Instance Mathods --------------------------------------------------------
+  # -- Instance Methods --------------------------------------------------------
   def url(relative: false)
     public_blog_path = ComfyBlog.config.public_blog_path
     post_path = ["/", public_blog_path, year, month, slug].join("/").squeeze("/")
@@ -49,7 +48,6 @@ protected
   end
 
   def set_published_at
-    self.published_at ||= Time.zone.now
+    self.published_at ||= Time.current
   end
-
 end

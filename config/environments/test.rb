@@ -47,5 +47,6 @@ defined?(ComfyBlog::Application) && ComfyBlog::Application.configure do
 
   config.active_job.queue_adapter = :inline
 
-  config.action_view.raise_on_missing_translations = true
+  # Raise error for missing translations
+  config.i18n.raise_on_missing_translations = true
 end
