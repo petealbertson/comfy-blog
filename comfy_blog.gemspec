@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.files = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|doc)/})
+    f.match(%r{^(test|doc)/}) || f.end_with?('.gem')
   end
 
   s.require_paths = ["lib"]
@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 3.1.0"
 
   s.add_dependency "comfortable_media_surfer", "~> 3.0"
-  s.add_dependency "rails", "~> 7.2.0"
+  s.add_dependency "rails", '>= 7.0', '< 9.0'
 end
